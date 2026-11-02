@@ -1,0 +1,29 @@
+node_modules/
+reports/*
+!reports/.gitkeep
+screenshots/*
+!screenshots/.gitkeep
+
+# Environment Variable
+.env 
+.env.* 
+!.env.example
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+
+# Allure
+allure-results/
+allure-report/
+
+# VS code
+.vscode/
+
+# OS file
+.DS_Store
+Thumbs.db
+
+# logs
+*.log 
