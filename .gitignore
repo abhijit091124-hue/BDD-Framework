@@ -10,6 +10,7 @@ screenshots/*
 !.env.example
 
 # Playwright
+.features-gen/
 test-results/
 playwright-report/
 blob-report/
@@ -26,4 +27,4 @@ allure-report/
 Thumbs.db
 
 # logs
-*.log 
+*.log

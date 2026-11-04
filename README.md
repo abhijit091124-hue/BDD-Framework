@@ -1,8 +1,8 @@
 # Playwright + Cucumber BDD Framework
 
-A beginner-friendly BDD automation project for SauceDemo. Cucumber discovers and runs
-the Gherkin scenarios; Playwright drives the browser through a Page Object Model.
-Playwright Test is not used to execute these scenarios.
+A beginner-friendly BDD automation project for SauceDemo. The add-to-cart feature
+uses `playwright-bdd` to generate Playwright Test scenarios from Gherkin; the original
+Cucumber runner and login scenarios are also retained in the repository.
 
 ## A. Project architecture
 
@@ -28,6 +28,29 @@ playwright-bdd-framework/
 The feature file describes behavior in Gherkin. Step definitions bind each Gherkin
 sentence to code. The Page Object Model centralizes the selectors and interactions,
 and hooks create and clean up a browser for each scenario.
+
+## Run the add-to-cart feature
+
+Install dependencies and Chromium, then run both scenarios in
+`features/add-to-cart.feature`:
+
+```sh
+npm ci
+npx playwright install chromium
+npm run test:add-to-cart
+```
+
+The command generates Playwright tests with `bddgen` before running them. The QA
+configuration must provide `BASE_URL`, `USERNAME`, and `PASSWORD` in
+`config/.env.qa`; the login steps use the demo credentials in the feature file.
+
+Run the cart or login feature alone, or all Playwright-BDD features:
+
+```sh
+npm run test:cart
+npm run test:login
+npm run test:all
+```
 
 ## B. Installation
 
